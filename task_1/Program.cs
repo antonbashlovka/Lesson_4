@@ -5,25 +5,25 @@
 */
 
 
-string number;
 int baseNumber;
 int expNumber;
 int i;
 
 
-Console.WriteLine("Введите число для возведения в степень");
-number = Console.ReadLine();
-while (int.TryParse(number, out baseNumber) == false){
-    Console.WriteLine("Ошибка. Вы ввели текст, необходимо число. Попробуйте еще раз");
-    number = Console.ReadLine();   
+int inputNumber (string message){
+    int res;
+    string number;
+    Console.WriteLine(message);
+    number = Console.ReadLine();
+    while (int.TryParse(number, out res) == false){
+        Console.WriteLine("Ошибка. Вы ввели текст, необходимо число. Попробуйте еще раз");
+        number = Console.ReadLine();   
+    }
+    return res;
 }
 
-Console.WriteLine("Введите показатель степени");
-number = Console.ReadLine();
-while (int.TryParse(number, out expNumber) == false){
-    Console.WriteLine("Ошибка. Вы ввели текст, необходимо число. Попробуйте еще раз");
-    number = Console.ReadLine();   
-}
+baseNumber = inputNumber ("Введите число для возведения в степень");
+expNumber = inputNumber ("Введите показатель степени");
 
 int res = baseNumber;
 
