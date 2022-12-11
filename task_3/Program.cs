@@ -20,7 +20,7 @@ void printArray(int[] arr){
 int findSum(int intNumber){
     int sum = 0;
     while (intNumber > 0) {
-        sum = sum + intNumber % 10;
+        sum = sum + (intNumber % 10);
         intNumber = intNumber / 10;
     }
     return sum;
